@@ -1,2 +1,28 @@
+# Cargo files
 /target
 *.lock
+
+# IDE files
+/.idea
+/.vscode
+/.vs
+/.zed
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.db
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.a
+*.o
+*.obj
+*.wasm
