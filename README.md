@@ -30,7 +30,7 @@ fn main() -> anyhow::Result<()> {
 ```
 
 ## Modの作り方
-`magrext-sdk`（開発中）を使用すると、以下のように簡単にModを作成できます。
+`magrext::sdk`を使用すると、以下のように簡単にModを作成できます。
 ```rust
 #[magrext::shiny_mod]
 pub fn init() {
