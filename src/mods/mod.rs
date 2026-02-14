@@ -1,7 +1,7 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use anyhow::{bail, Context, Result};
+use anyhow::{Context, Result, bail};
 use wasmparser::{Parser, Payload};
 
 use crate::metadata::Metadata;
@@ -52,7 +52,7 @@ impl Mod {
     pub fn author(&self) -> &str {
         &self.metadata.author
     }
-    
+
     pub fn license(&self) -> Option<&str> {
         self.metadata.license.as_deref()
     }
@@ -89,9 +89,8 @@ fn extract_metadata(bytes: &[u8]) -> Result<Metadata> {
         }
     }
 
-    let bytes = found.ok_or_else(|| {
-        anyhow::anyhow!("missing custom section: {}", MAGREXT_METADATA_SECTION)
-    })?;
+    let bytes = found
+        .ok_or_else(|| anyhow::anyhow!("missing custom section: {}", MAGREXT_METADATA_SECTION))?;
     let metadata = Metadata::from_json_bytes(&bytes)?;
 
     if metadata.name.is_empty() || metadata.version.is_empty() || metadata.author.is_empty() {
@@ -100,4 +99,3 @@ fn extract_metadata(bytes: &[u8]) -> Result<Metadata> {
 
     Ok(metadata)
 }
-

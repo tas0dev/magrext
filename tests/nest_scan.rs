@@ -1,8 +1,8 @@
 use std::fs;
 
+use magrext::nest::Nest;
 use magrext::sdk::MAGREXT_METADATA_SECTION;
 use tempfile::tempdir;
-use magrext::nest::Nest;
 
 fn encode_u32(mut value: u32, out: &mut Vec<u8>) {
     loop {
@@ -50,4 +50,3 @@ fn nest_collects_mods() {
     assert_eq!(mods.len(), 1);
     assert_eq!(mods[0].name(), "demo");
 }
-

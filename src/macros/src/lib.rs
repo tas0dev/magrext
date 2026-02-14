@@ -1,6 +1,6 @@
 use proc_macro::TokenStream;
 use quote::quote;
-use syn::{parse_macro_input, ItemFn};
+use syn::{ItemFn, parse_macro_input};
 
 /// それがmodの関数であることを示す
 #[proc_macro_attribute]
@@ -12,4 +12,3 @@ pub fn shiny_mod(_attr: TokenStream, item: TokenStream) -> TokenStream {
     func.attrs.push(syn::parse_quote!(#[no_mangle]));
     TokenStream::from(quote!(#func))
 }
-

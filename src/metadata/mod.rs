@@ -21,8 +21,8 @@ pub struct Metadata {
 impl Metadata {
     /// JSON形式のバイト列からMetadataを生成する
     pub fn from_json_bytes(bytes: &[u8]) -> Result<Self> {
-        let metadata: Metadata = serde_json::from_slice(bytes)
-            .context("failed to parse magrext metadata json")?;
+        let metadata: Metadata =
+            serde_json::from_slice(bytes).context("failed to parse magrext metadata json")?;
         Ok(metadata)
     }
 }

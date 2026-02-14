@@ -22,7 +22,7 @@ impl Nest {
             mods: Vec::new(),
         }
     }
-    
+
     /// modを収集する
     pub fn collect(&mut self) -> Result<()> {
         self.mods.clear();
