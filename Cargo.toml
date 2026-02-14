@@ -3,6 +3,11 @@ name = "magrext"
 version = "0.1.0"
 edition = "2024"
 authors = ["tas0dev"]
+description ="that allows you to create a framework for introducing mods into specific software, or to develop mods for that software"
+license = "Apache-2.0"
+keywords = ["modding", "plugin", "extension", "mod", "wasm"]
+repository = "https://github.com/tas0dev/magrext"
+license-file = "license"
 
 [workspace]
 members = ["src/macros"]
