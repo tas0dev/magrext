@@ -2,7 +2,7 @@ use anyhow::{Context, Result};
 use serde::{Deserialize, Serialize};
 
 /// modのメタデータを表す構造体
-#[derive(Serialize, Deserialize, Default,)]
+#[derive(Serialize, Deserialize, Default, Debug, Clone)]
 pub struct Metadata {
     /// modの名前
     pub name: String,

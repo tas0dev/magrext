@@ -26,13 +26,16 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
 ```
 
 ## Modの作り方
 `magrext::sdk`を使用すると、以下のように簡単にModを作成できます。
 ```rust
-#[magrext::shiny_mod]
+use magrext::sdk::{magrext_metadata, shiny_mod};
+
+magrext_metadata!(br#"{\"name\":\"demo\",\"version\":\"1.0.0\",\"author\":\"me\"}"#);
+
+#[shiny_mod]
 pub fn init() {
     println!("Hello from the shiny mod!");
 }
